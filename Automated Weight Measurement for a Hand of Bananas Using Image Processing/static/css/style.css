@@ -1,0 +1,23 @@
+/* Custom Styles */
+
+body {
+  background-color: #f7fdf7;
+}
+
+.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-weight: 600;
+  color: #2d572c;
+}
+
+form {
+  border: 1px solid #e0e0e0;
+}
+
+.image-preview img {
+  border: 3px solid #28a745;
+  padding: 5px;
+}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="text-center mb-5">
+  <h1 class="display-5">Welcome to the Banana Weight Estimator 🍌</h1>
+  <p class="lead">
+    This tool uses AI to predict the weight of a banana hand from an image.
+  </p>
+  <a href="/predict" class="btn btn-success btn-lg mt-3">Try Prediction</a>
+</div>
+
+<!-- 🔽 Medium-sized Image Slider -->
+<div class="d-flex justify-content-center">
+  <div
+    id="bananaImageCarousel"
+    class="carousel slide mb-4 shadow rounded w-100"
+    data-bs-ride="carousel"
+    style="max-width: 700px"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="{{ url_for('static', filename='images/slider1.jpg') }}"
+          class="d-block w-100 rounded"
+          alt="Banana Image 1"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{{ url_for('static', filename='images/slider2.jpg') }}"
+          class="d-block w-100 rounded"
+          alt="Banana Image 2"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{{ url_for('static', filename='images/slider3.jpg') }}"
+          class="d-block w-100 rounded"
+          alt="Banana Image 3"
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#bananaImageCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#bananaImageCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+{% endblock %}

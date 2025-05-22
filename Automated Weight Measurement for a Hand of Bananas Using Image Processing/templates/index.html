@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block title %}Predict Weight{% endblock %} {% block
+content %}
+<h2 class="mb-4 text-center">Upload a Banana Hand Image</h2>
+
+<form
+  action="/predict"
+  method="post"
+  enctype="multipart/form-data"
+  class="bg-white p-4 rounded shadow"
+>
+  <div class="mb-3">
+    <input
+      type="file"
+      name="file"
+      accept="image/*"
+      class="form-control"
+      onchange="previewImage(event)"
+      required
+    />
+  </div>
+  <div id="preview" class="mb-3 d-flex justify-content-center">
+    {% if image_name %}
+    <img
+      src="{{ url_for('static', filename='uploads/' + image_name) }}"
+      class="img-fluid rounded shadow"
+      alt="Uploaded Image"
+      style="max-width: 100%; height: auto"
+    />
+    {% endif %}
+  </div>
+  <button type="submit" class="btn btn-success w-100">Upload & Predict</button>
+</form>
+
+{% if predicted_weight %}
+<div class="card mt-4 shadow-sm text-center">
+  <div class="card-body">
+    <h5 class="card-title">🎯 Prediction Result</h5>
+    <p class="card-text fs-4">
+      Estimated Weight: <strong>{{ predicted_weight }} g</strong>
+    </p>
+  </div>
+</div>
+{% endif %} {% if error_message %}
+<div class="alert alert-danger mt-4 text-center">
+  <strong>Error:</strong> {{ error_message }}
+</div>
+{% endif %}
+
+<script>
+  function previewImage(event) {
+    const preview = document.getElementById("preview");
+    preview.innerHTML = "";
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.innerHTML = `<img src="${e.target.result}" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">`;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+{% endblock %}

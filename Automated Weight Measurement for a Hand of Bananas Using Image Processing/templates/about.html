@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block title %}About{% endblock %} {% block content
+%}
+<div class="text-center mx-auto" style="max-width: 800px">
+  <h2 class="mb-4">About This Project</h2>
+  <p class="mb-3">
+    This project automates the process of estimating the weight of a hand of
+    bananas using image processing and deep learning.
+  </p>
+  <p class="mb-3">
+    It utilizes a Convolutional Neural Network (CNN) trained on labeled images
+    of banana hands. The frontend is built using Flask and styled with
+    Bootstrap.
+  </p>
+  <p class="mb-4">
+    Designed to support agriculture and reduce manual effort in post-harvest
+    weight estimation.
+  </p>
+
+  <!-- 🔽 Centered Feature Slider -->
+  <div
+    id="featureSlider"
+    class="carousel slide mt-4"
+    data-bs-ride="carousel"
+    style="max-width: 700px; margin: 0 auto"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card text-center p-4 shadow">
+          <h5 class="card-title">📷 Image Upload</h5>
+          <p class="card-text">
+            Easily upload images of banana hands for analysis.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card text-center p-4 shadow">
+          <h5 class="card-title">🧠 AI Powered</h5>
+          <p class="card-text">
+            Our trained model estimates banana weight in real-time.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card text-center p-4 shadow">
+          <h5 class="card-title">🚀 Fast & Accurate</h5>
+          <p class="card-text">
+            Get quick results with high accuracy and user-friendly design.
+          </p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#featureSlider"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#featureSlider"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+
+  
+</div>
+{% endblock %}
+
+
+
